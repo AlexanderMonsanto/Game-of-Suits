@@ -1,0 +1,78 @@
+<!doctype html>
+  <head>
+    <title>Gmae of Suits</title>
+    <style type= "text/css">
+      p {
+        font-family: bold;
+      }
+      li {
+        margin-bottom: 2em;
+      }
+    </style>
+
+<script>
+  function Deck() {
+    this.cards = [];
+    this.count = function() {
+     return this.cards.length;
+    }
+    this.init = function() {
+      var suits = ["Heart", "Club", "Spade", "Diamond"];
+      // start loop of suits, s
+      for (s = 1; s<= 4; s++) {
+        for (r = 1; r<= 13; r++) {// start loop of ranks, r
+            this.cards.push(new Card(r, s))
+        }
+     } 
+    }
+  }
+
+  
+
+  function Card(rank, suit) {
+    this.rank = rank;
+    this.suit = suit;
+    this.show = function() {
+      console.log(this.rank + " of " + this.suit)
+    }
+  }
+  var D = new Deck()
+
+  function guessGame() {
+    randomIndex = Math.floor(Math.random() * D.count());
+    secretCard = D.cards[randomIndex] //inserting random card
+    guess = prompt("What suit am I thinking of....")
+    if (guess == secretCard.suit) {
+      console.log("Good Job!")
+      alert("You guessed it!")
+    }
+    else {
+      alert("Good try but no cigar")
+    }
+  }
+  for (tries = 1; tries <=3; tries++) {
+  var gameResponse = guessGame();
+
+  }
+</script>
+
+  </head>
+  <body>
+      <h1 style="color:red;">Game of Suits</h1>
+        <p style="font-weight: bold;"> <input></p>
+        <p>Guess the Suit of the Card I am thinking of.</p>
+        <ol>
+          <li style="margin: 1.5em;">
+            This game changes every day
+          </li>
+          <li style="margin: 1.5em;">
+            Check back for updates
+          </li>
+        </ol>
+  </body>
+  <footer style="font-family: monospace; font-size: smaller">
+    by Alexander Monsanto
+  </footer>
+
+
+</html>
