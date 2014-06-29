@@ -36,7 +36,8 @@
       console.log(this.rank + " of " + this.suit)
     }
   }
-  var D = new Deck()
+  var D = new Deck();
+  D.init();
 
   function guessGame() {
     randomIndex = Math.floor(Math.random() * D.count());
