@@ -21,7 +21,7 @@
       // start loop of suits, s
       for (s = 1; s<= 4; s++) {
         for (r = 1; r<= 13; r++) {// start loop of ranks, r
-            this.cards.push(new Card(r, s))
+            this.cards.push(new Card(r, suit[s - 1]))
         }
      } 
     }
@@ -45,14 +45,20 @@
     guess = prompt("What suit am I thinking of....")
     if (guess == secretCard.suit) {
       console.log("Good Job!")
+      secretCard.show()
       alert("You guessed it!")
     }
     else {
+      console.log("Try Again!")
+      secretCard.show()
       alert("Good try but no cigar")
     }
   }
   for (tries = 1; tries <=3; tries++) {
   var gameResponse = guessGame();
+  if (gameResponse == guess) {
+    console.log("Game Complete")
+  }
 
   }
 </script>
