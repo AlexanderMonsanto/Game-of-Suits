@@ -21,11 +21,7 @@
       // start loop of suits, s
       for (s = 1; s<= 4; s++) {
         for (r = 1; r<= 13; r++) {// start loop of ranks, r
-<<<<<<< HEAD
-            this.cards.push(new Card(r, suit[s - 1]))
-=======
             this.cards.push(new Card(r, suits[s - 1]))
->>>>>>> d3a40f620d3648889f3702775c16e111b9a7ef21
         }
      } 
     }
@@ -50,21 +46,12 @@
     
     if (guess == secretCard.suit) {
       console.log("Good Job!")
-<<<<<<< HEAD
-      secretCard.show()
-      alert("You guessed it!")
-    }
-    else {
-      console.log("Try Again!")
-      secretCard.show()
-=======
       secretCard.show();
       alert("You guessed it!")
     }
     else {
       console.log("Try again!")
       secretCard.show();
->>>>>>> d3a40f620d3648889f3702775c16e111b9a7ef21
       alert("Good try but no cigar")
     }
   }
